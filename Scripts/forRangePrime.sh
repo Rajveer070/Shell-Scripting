@@ -1,0 +1,21 @@
+echo "Enter the value of n1 = "
+read n1
+echo "Enter the value of n2 = "
+read n2
+
+for ((i=n1; i<=n2; i++))
+do
+    flag=0
+    for ((j=2; j<=i/2; j++))
+    do
+        if [ $((i%j)) == 0 ]
+        then 
+            flag=1
+            break
+        fi
+    done
+    if [ $flag -eq 0 ] && [ $i -gt 1 ]
+    then 
+        echo "$i"
+    fi
+done
